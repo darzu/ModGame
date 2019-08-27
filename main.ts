@@ -1,5 +1,11 @@
-//% help=foobar/doStuff weight=100 blockNamespace="foobar"
-//% blockId=doStuff block="doStuff" blockAllowMultiple=1
-function doStuff(a: string): void {
-    scene.setBackgroundColor(2)
+//% weight=100 color=#d2b4ff icon="\uf1b0"
+//% groups='["foo!"]'
+namespace foobar {
+
+    //% blockId=doStuff block="doStuff"
+    //% group="foo!"
+    function doStuff(): void {
+        scene.setBackgroundColor(2)
+    }
+
 }
