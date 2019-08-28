@@ -1,9 +1,9 @@
 [
     {
         "name": "Sprite Builder (2)",
-        "namespace": "sprites",
+        "namespace": "foobar",
         "group": "Create",
-        "label": "Create a sprite (2)...",
+        "label": "Create a foo (2)...",
         "outputType": "blocks",
         "initialOutput": "let $spriteName = sprites.create($spriteImage, $spriteKind)",
         "questions": [
