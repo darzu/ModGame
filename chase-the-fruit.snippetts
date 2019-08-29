@@ -17,9 +17,10 @@ controller.moveSprite(hero, 100, 100)
 hero.setFlag(SpriteFlag.StayInScreen, true)
 info.setLife(3)
 game.onUpdateInterval(500, function () {
-    choice = Math.randomRange(1, 2)
-    if (choice == 1) {
-        projectile = sprites.createProjectileFromSide($toAvoidImage, -60, 0)
+    choice = Math.randomRange(1, 3)
+    if (choice == 1 || choice == 2) {
+        let vx = choice == 1 ? 60 : -60
+        projectile = sprites.createProjectileFromSide($toAvoidImage, vx, 0)
     } else {
         projectile = sprites.createProjectileFromSide($toEatImage, 55, 0)
         projectile.setKind(SpriteKind.Food)
