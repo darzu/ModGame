@@ -1,0 +1,28 @@
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    scene.cameraShake(4, 500)
+    otherSprite.destroy(effects.bubbles)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    otherSprite.destroy()
+    sprite.startEffect(effects.hearts, 100)
+    music.baDing.play()
+})
+let projectile: Sprite = null
+let choice = 0
+scene.setBackgroundColor(13)
+let hero = sprites.create($heroImage, SpriteKind.Player)
+controller.moveSprite(hero, 100, 100)
+hero.setFlag(SpriteFlag.StayInScreen, true)
+info.setLife(3)
+game.onUpdateInterval(500, function () {
+    choice = Math.randomRange(1, 2)
+    if (choice == 1) {
+        projectile = sprites.createProjectileFromSide($toAvoidImage, -60, 0)
+    } else {
+        projectile = sprites.createProjectileFromSide($toEatImage, 55, 0)
+        projectile.setKind(SpriteKind.Food)
+    }
+    projectile.y = Math.randomRange(10, 110)
+})

@@ -2,7 +2,7 @@
 //% groups='["foo!"]'
 namespace foobar {
 
-    //% blockId=doStuff block="doStuff"
+    //% blockId=doStuff block="doStuff2"
     //% group="foo!"
     export function doStuff(): void {
         scene.setBackgroundColor(2)

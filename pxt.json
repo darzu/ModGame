@@ -8,7 +8,8 @@
     "files": [
         "README.md",
         "main.ts",
-        "pxtsnippet.json"
+        "pxtsnippets.json",
+        "chase-the-fruit.snippetts"
     ],
     "testFiles": [
         "test.ts"
